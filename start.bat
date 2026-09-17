@@ -117,8 +117,10 @@ echo.
 echo ============================================================
 echo           MedRipple AI is running successfully!
 echo ============================================================
-echo   Frontend Dashboard:  http://localhost:5173/
+echo   Local Dashboard:     http://localhost:5173/
+echo   Network URL (Wi-Fi): http://172.16.179.240:5173/
 echo   FastAPI Backend:     http://localhost:8000/
+echo   Backend Network URL: http://172.16.179.240:8000/
 echo   Interactive Docs:    http://localhost:8000/docs
 echo   System Health Check: http://localhost:8000/api/health
 echo ============================================================
