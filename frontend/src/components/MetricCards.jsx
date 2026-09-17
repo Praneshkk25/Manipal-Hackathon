@@ -36,18 +36,21 @@ export default function MetricCards() {
 
   return (
     <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-      gap: '12px',
-      padding: '16px 24px 8px 24px'
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '16px',
+      padding: '16px 24px 8px 24px',
+      width: '100%'
     }}>
       {/* 1. The Ripple Score Gauge Card */}
       <div className="med-card" style={{
-        padding: '12px 14px',
+        padding: '12px 16px',
         display: 'flex',
         alignItems: 'center',
         gap: '12px',
-        minWidth: '185px'
+        flex: '1.2 1 240px',
+        minWidth: '235px',
+        boxSizing: 'border-box'
       }}>
         <div style={{ position: 'relative', width: '74px', height: '74px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
           <svg width="74" height="74" viewBox="0 0 80 80" style={{ transform: 'rotate(-90deg)' }}>
@@ -132,7 +135,10 @@ export default function MetricCards() {
         alignItems: 'center',
         gap: '10px',
         backgroundColor: '#fef2f2',
-        borderColor: '#fecaca'
+        borderColor: '#fecaca',
+        flex: '1 1 145px',
+        minWidth: '145px',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           width: '32px',
@@ -141,18 +147,19 @@ export default function MetricCards() {
           backgroundColor: '#fee2e2',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexShrink: 0
         }}>
           <AlertTriangle size={18} color="#dc2626" />
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{ fontSize: '18px', fontWeight: '800', color: '#dc2626', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
             {counts.CRITICAL ?? 0}
           </div>
-          <div style={{ fontSize: '11px', fontWeight: '800', color: '#991b1b', marginTop: '3px' }}>
+          <div style={{ fontSize: '11px', fontWeight: '800', color: '#991b1b', marginTop: '3px', whiteSpace: 'nowrap' }}>
             Critical Shortage
           </div>
-          <div style={{ fontSize: '10px', color: '#b91c1c' }}>
+          <div style={{ fontSize: '10px', color: '#b91c1c', whiteSpace: 'nowrap' }}>
             (≤ {critThreshold} days)
           </div>
         </div>
@@ -165,7 +172,10 @@ export default function MetricCards() {
         alignItems: 'center',
         gap: '10px',
         backgroundColor: '#fff7ed',
-        borderColor: '#fed7aa'
+        borderColor: '#fed7aa',
+        flex: '1 1 145px',
+        minWidth: '145px',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           width: '32px',
@@ -174,18 +184,19 @@ export default function MetricCards() {
           backgroundColor: '#ffedd5',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexShrink: 0
         }}>
           <AlertOctagon size={18} color="#ea580c" />
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{ fontSize: '18px', fontWeight: '800', color: '#ea580c', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
             {counts.APPROACHING ?? 0}
           </div>
-          <div style={{ fontSize: '11px', fontWeight: '800', color: '#9a3412', marginTop: '3px' }}>
+          <div style={{ fontSize: '11px', fontWeight: '800', color: '#9a3412', marginTop: '3px', whiteSpace: 'nowrap' }}>
             Approaching Shortage
           </div>
-          <div style={{ fontSize: '10px', color: '#c2410c' }}>
+          <div style={{ fontSize: '10px', color: '#c2410c', whiteSpace: 'nowrap' }}>
             (6–9 days)
           </div>
         </div>
@@ -198,7 +209,10 @@ export default function MetricCards() {
         alignItems: 'center',
         gap: '10px',
         backgroundColor: '#fefce8',
-        borderColor: '#fef08a'
+        borderColor: '#fef08a',
+        flex: '1 1 145px',
+        minWidth: '145px',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           width: '32px',
@@ -207,18 +221,19 @@ export default function MetricCards() {
           backgroundColor: '#fef9c3',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexShrink: 0
         }}>
           <Clock size={18} color="#ca8a04" />
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{ fontSize: '18px', fontWeight: '800', color: '#ca8a04', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
             {counts.AT_RISK ?? 0}
           </div>
-          <div style={{ fontSize: '11px', fontWeight: '800', color: '#854d0e', marginTop: '3px' }}>
+          <div style={{ fontSize: '11px', fontWeight: '800', color: '#854d0e', marginTop: '3px', whiteSpace: 'nowrap' }}>
             At Risk Buffer
           </div>
-          <div style={{ fontSize: '10px', color: '#a16207' }}>
+          <div style={{ fontSize: '10px', color: '#a16207', whiteSpace: 'nowrap' }}>
             (10–{donorFloor} days)
           </div>
         </div>
@@ -231,7 +246,10 @@ export default function MetricCards() {
         alignItems: 'center',
         gap: '10px',
         backgroundColor: '#f0fdf4',
-        borderColor: '#bbf7d0'
+        borderColor: '#bbf7d0',
+        flex: '1 1 145px',
+        minWidth: '145px',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           width: '32px',
@@ -240,18 +258,19 @@ export default function MetricCards() {
           backgroundColor: '#dcfce7',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexShrink: 0
         }}>
           <CheckCircle2 size={18} color="#16a34a" />
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{ fontSize: '18px', fontWeight: '800', color: '#16a34a', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
             {counts.HEALTHY ?? 0}
           </div>
-          <div style={{ fontSize: '11px', fontWeight: '800', color: '#166534', marginTop: '3px' }}>
+          <div style={{ fontSize: '11px', fontWeight: '800', color: '#166534', marginTop: '3px', whiteSpace: 'nowrap' }}>
             Healthy Buffer
           </div>
-          <div style={{ fontSize: '10px', color: '#15803d' }}>
+          <div style={{ fontSize: '10px', color: '#15803d', whiteSpace: 'nowrap' }}>
             (&gt; {donorFloor} days)
           </div>
         </div>
@@ -264,7 +283,10 @@ export default function MetricCards() {
         alignItems: 'center',
         gap: '10px',
         backgroundColor: '#faf5ff',
-        borderColor: '#e9d5ff'
+        borderColor: '#e9d5ff',
+        flex: '1 1 145px',
+        minWidth: '145px',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           width: '32px',
@@ -273,18 +295,19 @@ export default function MetricCards() {
           backgroundColor: '#f3e8ff',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexShrink: 0
         }}>
           <Users size={18} color="#9333ea" />
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{ fontSize: '18px', fontWeight: '800', color: '#7e22ce', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
             +{secondarySpillover}
           </div>
-          <div style={{ fontSize: '11px', fontWeight: '800', color: '#6b21a8', marginTop: '3px' }}>
+          <div style={{ fontSize: '11px', fontWeight: '800', color: '#6b21a8', marginTop: '3px', whiteSpace: 'nowrap' }}>
             patients / day
           </div>
-          <div style={{ fontSize: '10px', color: '#9333ea' }}>
+          <div style={{ fontSize: '10px', color: '#9333ea', whiteSpace: 'nowrap' }}>
             Secondary Spillover
           </div>
         </div>
@@ -297,7 +320,10 @@ export default function MetricCards() {
         alignItems: 'center',
         gap: '10px',
         backgroundColor: '#f0fdf4',
-        borderColor: '#bbf7d0'
+        borderColor: '#bbf7d0',
+        flex: '1 1 145px',
+        minWidth: '145px',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           width: '32px',
@@ -306,18 +332,19 @@ export default function MetricCards() {
           backgroundColor: '#dcfce7',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexShrink: 0
         }}>
           <Sprout size={18} color="#16a34a" />
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{ fontSize: '18px', fontWeight: '800', color: '#15803d', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
             {rescuedUnits.toLocaleString()}
           </div>
-          <div style={{ fontSize: '11px', fontWeight: '800', color: '#166534', marginTop: '3px' }}>
+          <div style={{ fontSize: '11px', fontWeight: '800', color: '#166534', marginTop: '3px', whiteSpace: 'nowrap' }}>
             units
           </div>
-          <div style={{ fontSize: '10px', color: '#15803d' }}>
+          <div style={{ fontSize: '10px', color: '#15803d', whiteSpace: 'nowrap' }}>
             Rescued via FEFO (&lt;{settings.expiry_window_days}d)
           </div>
         </div>
